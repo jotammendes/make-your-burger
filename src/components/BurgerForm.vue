@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Componente de mensagem de sucesso</p>
+    <Message :msg="msg" v-show="msg" />
     <div>
       <form id="burger-form" @submit="createBurger">
         <div class="input-container">
@@ -37,8 +37,13 @@
 </template>
 
 <script>
+  import Message from './Message';
+
   export default {
     name: 'BurgerForm',
+    components: {
+      Message
+    },
     data() {
       return {
         breads: null,
@@ -73,6 +78,7 @@
 
         const dataJson = JSON.stringify(data);
 
+        // salvando dados do formulário no banco
         const req = await fetch('http://localhost:3000/burgers', {
           method: 'POST',
           headers: {
@@ -82,6 +88,13 @@
         });
         const res = await req.json();
 
+        // escrevendo mensagem de sucesso na tela
+        this.msg = `Pedido Nº ${res.id} realizado com sucesso`;
+
+        // limpando mensagem da tela
+        setTimeout(() => this.msg = '', 3000);
+
+        // limpando os campos do formulário
         this.name = '';
         this.bread = '';
         this.meat = '';
