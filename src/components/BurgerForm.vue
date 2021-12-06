@@ -2,7 +2,7 @@
   <div>
     <p>Componente de mensagem de sucesso</p>
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurger">
         <div class="input-container">
           <label for="name">Nome do Cliente</label>
           <input type="text" id="name" name="name" v-model="name" placeholder="Digite o seu nome">
@@ -48,7 +48,6 @@
         bread: null,
         meat: null,
         optional: [],
-        status: 'Solicitado',
         msg: null
       }
     },
@@ -60,6 +59,33 @@
         this.breads = data.breads;
         this.meats = data.meats;
         this.optionals = data.optional;
+      },
+      async createBurger(event) {
+        event.preventDefault();
+
+        const data = {
+          name: this.name,
+          bread: this.bread,
+          meat: this.meat,
+          optional: Array.from(this.optional),
+          status: 'Solicitado'
+        }
+
+        const dataJson = JSON.stringify(data);
+
+        const req = await fetch('http://localhost:3000/burgers', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: dataJson
+        });
+        const res = await req.json();
+
+        this.name = '';
+        this.bread = '';
+        this.meat = '';
+        this.optional = '';
       }
     },
     mounted() {
