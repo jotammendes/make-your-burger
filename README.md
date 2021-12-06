@@ -5,9 +5,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads Vue project for development
 ```
 npm run serve
+```
+
+### Compiles and run json-server (back-end) for development
+```
+npm run backend
 ```
 
 ### Compiles and minifies for production
