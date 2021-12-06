@@ -101,16 +101,6 @@
       "id": 2
     },
     {
-      "name": "Auto-ineficácia média",
-      "bread": "Parmesão e Orégano",
-      "meat": "Maminha",
-      "optional": [
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
       "name": "João Paulo M Mendes",
       "bread": "Italiano Branco",
       "meat": "Maminha",
@@ -119,16 +109,6 @@
       ],
       "status": "Solicitado",
       "id": 4
-    },
-    {
-      "name": "Erika",
-      "bread": "Integral",
-      "meat": "Picanha",
-      "optional": [
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 5
     },
     {
       "name": "Paulo Matias",
