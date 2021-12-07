@@ -86,7 +86,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
@@ -107,7 +107,7 @@
       "optional": [
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 4
     },
     {
@@ -119,7 +119,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 6
     }
   ]
